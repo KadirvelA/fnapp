@@ -1,0 +1,17 @@
+# .github/workflows/main.yml
+name: Main CI
+ 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+ 
+jobs:
+  ci-pipeline:
+    uses: "KadirvelA/gitops-sample-wa/.github/workflows/main.yml@main"
+    with:
+      version: '16'
+      environment: 'production'
