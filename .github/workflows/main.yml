@@ -2,16 +2,13 @@
 name: Main CI
  
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
-      - main
- 
+      - dev 
 jobs:
-  ci-pipeline:
-    uses: "KadirvelA/gitops-sample-wa/.github/workflows/main.yml@main"
+  deploy:
+    uses: KadirvelA/gitops-sample/.github/workflows/dev.yml@dev
     with:
-      version: '16'
-      environment: 'production'
+      app_location: '/'  # Input passed to reusable workflow
+      output_location: '.'  # Input passed to reusable workflow
+      azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DEV }}
