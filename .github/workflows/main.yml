@@ -7,7 +7,7 @@ on:
       - dev 
 jobs:
   deploy:
-    uses: KadirvelA/gitops-sample/.github/workflows/dev.yml@dev
+    uses: KadirvelA/gitops-sample/.github/workflows/qa.yml@dev
     with:
       app_location: '/'  # Input passed to reusable workflow
       output_location: '.'  # Input passed to reusable workflow
